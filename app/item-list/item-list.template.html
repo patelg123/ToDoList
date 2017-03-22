@@ -1,0 +1,8 @@
+<ul>
+    <li ng-repeat="item in $ctrl.tasks">
+    	<span>{{ item.name }}</span>
+    	<p>{{ item.description }}</p>
+   	</li>
+</ul>
+
+<p>Total items in list is {{$ctrl.tasks.length}}
