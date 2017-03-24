@@ -9,12 +9,24 @@ angular.
 				{
 					name: 'Have Lunch',
 					description: 'Only half an hour',
+					priority: 1,
+					completed: 'Y',
 				},
 				{
 					name: 'Go Home',
-					description: 'Check Traffic',	
+					description: 'Remember your mobile phone',
+					priority: 5,
+					completed: 'N',
+				},
+				{
+					name: 'Check Traffic',
+					description: 'Google Maps',
+					priority: 4,
+					completed: 'N'
 				}
 			];
+
+			this.orderList = "priority";
 
 		}
 

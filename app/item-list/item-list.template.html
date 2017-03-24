@@ -1,8 +1,32 @@
-<ul>
-    <li ng-repeat="item in $ctrl.tasks">
-    	<span>{{ item.name }}</span>
-    	<p>{{ item.description }}</p>
-   	</li>
-</ul>
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-2">
+		<!-- Side bar -->
+		<p>
+			<b>Sort By:</b>
+				<select ng-model="$ctrl.orderList">
+					<option value="name">Name</option>
+					<option value="priority">Priority</option>
+				</select>
+				
+		</p>
 
-<p>Total items in list is {{$ctrl.tasks.length}}
+		</div>
+
+		<div class="col-md-10">
+			<ul>
+			    <li ng-repeat="item in $ctrl.tasks |orderBy:$ctrl.orderList">
+			    	<span class="item_name">{{ item.name }}</span>
+			    	<p>
+			    		{{ item.description }} <br />
+			    		Priority: {{ item.priority }} <br />
+			    		Completed: {{ item.completed }}
+			   		</p>
+			   	</li>
+			</ul>
+		</div>
+
+	</div>
+</div>
+
+<h3>Total items in list is {{$ctrl.tasks.length}}</h3>
